@@ -52,13 +52,15 @@ func mutateRayCluster(
 	for i := 0; i < len(raycluster.Spec.WorkerGroupSpecs); i++ {
 		template := raycluster.Spec.WorkerGroupSpecs[i]
 		numWorkers := template.Replicas
-		
+
+		// generate hostnames
 		hostNames := make([]string, *numWorkers)
 		for j := 0; j < int(*numWorkers); j++ {
 			hostNames[i] = fmt.Sprintf("worker-%d", j)
 		}
 		joinedHostNames := strings.Join(hostNames, ",")
 
+		// inject hostnames into ray worker pods
 		for j := 0; j < len(raycluster.Spec.WorkerGroupSpecs[i].Template.Spec.Containers); j++ {
 			patch := map[string]interface{}{
 				"op": "add",
