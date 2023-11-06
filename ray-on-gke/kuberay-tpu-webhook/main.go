@@ -56,7 +56,6 @@ func mutateRayCluster(
 		hostNames := make([]string, *numWorkers)
 		for j := 0; j < int(*numWorkers); j++ {
 			hostNames[i] = fmt.Sprintf("worker-%d", j)
-			log.Debug().Str("host name: ", fmt.Sprintf("worker-%d", j)).Send()
 		}
 		joinedHostNames := strings.Join(hostNames, ",")
 

@@ -27,7 +27,7 @@ Preinstall on your computer:
 
 1. `make install-cert-manager`
 
-3. If deploying webhook across multiple namespaces: `make reflector`
+3. If deploying webhook across multiple namespaces: `make install-reflector`
 
 4. `make all`
 
