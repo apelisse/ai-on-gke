@@ -14,12 +14,6 @@ import (
 	corev1 "k8s.io/api/core/v1"
 )
 
-const (
-	FlagTLSCertFile = "tls-cert-file"
-	FlagTLSKeyFile  = "tls-key-file"
-	FlagVerbose     = "verbose"
-)
-
 // represents TPU worker pod
 // for multi slice need to track node pools with pods
 // node pool -> pod slice

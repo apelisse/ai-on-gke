@@ -56,7 +56,6 @@ head:
     #     memory: "512Mi"
   labels:
     cloud.google.com/gke-ray-node-type: head
-    kuberay-tpu-webhook/inject: enabled
   rayStartParams:
     dashboard-host: '0.0.0.0'
     block: 'true'
